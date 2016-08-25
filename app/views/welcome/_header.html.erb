@@ -1,0 +1,28 @@
+<div class="banner">
+  <div class="navigation ">
+    <div class="title-bar">
+      <strong>RestroApp</strong>
+    </div>
+    <div class="navigatiom-right">
+      <ul class="naivigation-menu">
+        <li><a href="#">Help</a></li>
+        <li><a href="#">Cart</a></li>
+        <%	 if user_signed_in? %>
+        <li><%=	 link_to "Logout" ,destroy_user_session_path , method: :delete%> </li>
+            <% else %>
+                <li><%=	 link_to 'Login',new_user_session_path %></li>
+        <% end %>
+
+      </ul>
+    </div>
+  </div>
+  <div class="row hero-content">
+    <h2 class="text-center">Order a Food Online using <strong>RestroApp</strong></h2>
+    <div class="medium-6 small-offset-2 columns ">
+      <input type="text" name="location" placeholder="Enter Location to Search">
+    </div>
+    <div class="medium-4 columns">
+      <a href="#" class="button ">Search Location</a>
+    </div>
+  </div>
+</div>
